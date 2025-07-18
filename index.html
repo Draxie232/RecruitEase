@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Recruitment System</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">RecruitEase</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav class="nav-menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="recruiters.html">For Recruiters</a>
+      <a href="Users.html">For Users</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn" id="loginBtn">Login</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find Your Perfect Job or Hire Top Talent</h1>
+      <p>Empowering careers, connecting companies. Your dream job or candidate is just a click away.</p>
+      <a href="#" class="cta-btn" id="getStartedBtn">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <h3>🚀 Fast & Efficient Hiring</h3>
+      <p>AI-powered job matching to connect employers with the best candidates.</p>
+    </div>
+    <div class="feature">
+      <h3>🔍 Smart Job Search</h3>
+      <p>Find your ideal job with our advanced filtering and recommendations.</p>
+    </div>
+    <div class="feature">
+      <h3>🛡 Secure & Private</h3>
+      <p>Your data is protected with industry-standard security measures.</p>
+    </div>
+  </section>
+
+  <!-- Chatbot Toggle Button -->
+  <button id="chat-toggle">💬</button>
+
+  <!-- Chatbot Container -->
+  <div id="chat-container" class="hidden">
+    <div class="chat-header">RecruitEase Assistant</div>
+    <div id="chat-messages" class="chat-body"></div>
+    <div class="chat-footer">
+      <input type="text" id="chat-input" placeholder="Ask me anything..." />
+      <button id="send-btn">📨</button>
+      <button id="mic-btn">🎤</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 RecruitEase. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="nav.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('user');
+    const loginBtn = document.getElementById('loginBtn');
+    const getStartedBtn = document.getElementById('getStartedBtn');
+
+    if (username) {
+      const header = document.querySelector('header');
+      header.insertAdjacentHTML('beforeend', `
+        <div class="user-info">
+          <div class="user-icon">${username[0].toUpperCase()}</div>
+          <span class="user-name">${username}</span>
+        </div>
+      `);
+      if (loginBtn) loginBtn.style.display = 'none';
+      if (getStartedBtn) getStartedBtn.href = 'Users.html';
+    } else {
+      if (getStartedBtn) getStartedBtn.href = 'login.html';
+    }
+
+    // Chatbot Toggle Logic
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatContainer = document.getElementById('chat-container');
+
+    chatToggle.addEventListener('click', () => {
+      chatContainer.classList.toggle('hidden');
+    });
+  </script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

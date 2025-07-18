@@ -1,0 +1,123 @@
+/* Reset default styles */
+body, h1, h2, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background with animated gradient blur */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #1e1e2e, #282a36, #44475a, #6272a4);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Animated Background */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Login container with glassmorphism */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    max-width: 100%;
+    animation: fadeIn 0.6s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Heading */
+.login-container h2 {
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Input fields with neon glow */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input fields - glowing effect on focus */
+.login-container input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 8px rgba(147, 51, 234, 0.7);
+}
+
+/* Placeholder text color */
+.login-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Login Button with animated hover effect */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #4C51BF, #9333EA);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button hover with animated glow */
+.login-container button:hover {
+    background: linear-gradient(90deg, #6D28D9, #B83280);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(147, 51, 234, 0.8);
+}
+
+/* Button Click Effect */
+.login-container button:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 5px rgba(147, 51, 234, 0.8);
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 25px;
+    }
+}

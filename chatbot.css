@@ -1,0 +1,111 @@
+/* General Styles for Chatbot */
+#chat-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+#chat-container {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 320px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+#chat-container.hidden {
+  display: none;
+}
+
+/* Header Style */
+.chat-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+}
+
+/* Chat Body */
+.chat-body {
+  height: 250px;
+  padding: 10px;
+  overflow-y: auto;
+  background: #032d4e;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Message Bubble Styles */
+.chat-body .message {
+  max-width: 80%;
+  margin-bottom: 12px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chat-body .message.user {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+  border-top-left-radius: 0;
+}
+
+.chat-body .message.bot {
+  background-color: #e5e5e5;
+  color: #333;
+  align-self: flex-start;
+  border-top-right-radius: 0;
+}
+
+/* Footer Input Area */
+.chat-footer {
+  display: flex;
+  padding: 10px;
+  background: #f1f1f1;
+  gap: 10px;
+  border-radius: 0 0 12px 12px;
+}
+
+.chat-footer input {
+  flex-grow: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.chat-footer button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Hover Effects */
+.chat-footer button:hover {
+  background: #0056b3;
+}

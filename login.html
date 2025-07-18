@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | RecruitEase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-container" data-tilt>
+      <h2>Welcome Back 👋</h2>
+      <p>Please login to continue</p>
+      <form action="/login" method="POST">
+        <input type="email" name="email" required placeholder="Enter your email">
+        <input type="password" name="password" required placeholder="Enter your password">
+        <button type="submit">Login</button>
+        <p class="redirect">Don't have an account? <a href="register.html">Register Now</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3D Tilt Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script>
+    VanillaTilt.init(document.querySelector(".login-container"), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.3
+    });
+  </script>
+</body>
+</html>

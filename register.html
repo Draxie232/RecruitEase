@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - RecruitEase</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header>
+        <div class="logo">RecruitEase</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav class="nav-menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="recruiters.html">For Recruiters</a>
+            <a href="Users.html">For Users</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="btn">Login</a>
+        </nav>
+    </header>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form id="registerForm" action="/register" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+    <footer>
+        © 2025 Recruitment Management System. All rights reserved.
+    </footer>
+    <script src="nav.js"></script>
+    <script>
+        // Debug input interaction
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('click', () => console.log(`${input.name} clicked`));
+            input.addEventListener('focus', () => console.log(`${input.name} focused`));
+            input.addEventListener('input', () => console.log(`${input.name} value: ${input.value}`));
+        });
+    </script>
